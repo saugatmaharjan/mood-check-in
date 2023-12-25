@@ -36,6 +36,38 @@ export const questions: Question[] = [
     options: [
       {
         name: 'worst',
+        label: 'Flying like a bird',
+        weight: 5,
+      },
+      {
+        name: 'Yes',
+        label: 'Enjoying',
+        weight: 4,
+      },
+      {
+        name: 'worst',
+        label: 'Feeling donkey',
+        weight: 3,
+      },
+      {
+        name: 'worst',
+        label: 'Walking on a thin rope',
+        weight: 2,
+      },
+      {
+        name: 'worst',
+        label: 'Seeing tori ko phool',
+        weight: 1,
+      },
+    ],
+  },
+  {
+    id: 2,
+    order: 2,
+    label: 'Do you feel productive at work today?',
+    options: [
+      {
+        name: 'worst',
         label: 'Yes',
         weight: 5,
       },
@@ -62,9 +94,9 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 2,
-    order: 2,
-    label: 'Do you feel productive at work today?',
+    id: 3,
+    order: 3,
+    label: 'Do you feel motivated with your work today?',
     options: [
       {
         name: 'worst',
@@ -94,19 +126,13 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 3,
-    order: 3,
-    label: 'Do you feel motivated with your work today?',
-    options: Object.values(questionOptions),
-  },
-  {
     id: 4,
     order: 4,
     label: 'Any blockage in your current tasks?',
     options: [
       {
         name: 'worst',
-        label: 'No',
+        label: 'Yes',
         weight: 5,
       },
       {

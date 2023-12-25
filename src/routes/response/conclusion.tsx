@@ -1,9 +1,12 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import useResponses from '../../store/response';
 import { Response } from '../../types';
 import { interpolate } from '../../utils';
 import { MAX_WEIGHT, MIN_WEIGHT } from '../../data/questions';
 import { conclusions } from '../../data/conclusion';
+
+import Hat from '../../assets/hat.svg';
+import useResponder from '../../store/responder';
 
 const calculateWeight = (responses: Response[]) => {
   return responses.reduce((total, response) => {
@@ -13,6 +16,9 @@ const calculateWeight = (responses: Response[]) => {
 
 const Conclusion = () => {
   const { responses } = useResponses();
+  const { sharedWithName, setSharedWithName } = useResponder();
+
+  const [promptName, setPromptName] = useState(false);
 
   const totalWeight = useMemo(
     () => calculateWeight(Object.values(responses)),
@@ -32,11 +38,36 @@ const Conclusion = () => {
   return (
     <div className="slide conclusion">
       <div className="slideContent">
-        <div className="emoji">{conclusion.emoji}</div>
+        <div className="emoji">
+          <img src={Hat} className="hat" />
+          {conclusion.emoji}
+        </div>
         <h1
           className="message"
           dangerouslySetInnerHTML={{ __html: conclusion.message }}
         />
+        {!promptName && (
+          <button className="shareBtn" onClick={() => setPromptName(true)}>
+            Share with
+          </button>
+        )}
+        {promptName && (
+          <>
+            <label className="label">
+              Mentor's Name
+              <br />
+              <input
+                name="sharedWith"
+                value={sharedWithName}
+                onChange={(e) => setSharedWithName(e.target.value)}
+                placeholder="Mentor's name"
+                className="nameInput"
+              />
+            </label>
+            <br />
+            <button>Done</button>
+          </>
+        )}
       </div>
     </div>
   );

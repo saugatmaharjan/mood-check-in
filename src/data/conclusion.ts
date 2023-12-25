@@ -1,9 +1,9 @@
 export const conclusions: Record<number, { emoji: string; message: string }> = {
-  1: {
+  5: {
     emoji: '🥳 Perfect! ',
     message: 'Lets grab some beer',
   },
-  2: {
+  4: {
     emoji: '😃 Great!',
     message: 'You are on the right track. <br />  Happy work!!',
   },
@@ -11,9 +11,9 @@ export const conclusions: Record<number, { emoji: string; message: string }> = {
     emoji: '🙂 Okay!',
     message: "You're doing great. <br /> Hope the best for your work ahead",
   },
-  4: {
+  2: {
     emoji: '🥺 Ah oh!',
     message: 'Have some chat with your team so that work can be better!!',
   },
-  5: { emoji: '😭 Stay strong!', message: 'Please get some help.' },
+  1: { emoji: '😭 Stay strong!', message: 'Please get some help.' },
 };

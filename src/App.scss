@@ -150,10 +150,26 @@ main {
     line-height: 150px;
     margin-bottom: 24px;
     font-weight: bold;
+    position: relative;
+
+
+.hat {
+  position: absolute;
+  top: -72px;
+  left: -54px;
+  height: 125px;
+  width: auto;
+}
   }
 
   .message {
     font-weight: 300;
+    margin-bottom: 32px;
   }
 }
+
+.shareBtn {
+  margin-top: 24px;
+}
+
 
