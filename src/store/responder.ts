@@ -1,6 +1,4 @@
 import { create } from 'zustand';
-import { Answer, Response } from '../types';
-import { questions } from '../data/questions';
 
 interface ResponderState {
   name: string;
