@@ -9,7 +9,6 @@ const ResponseCollector = () => {
 
   const next = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-
     const slider = sliderRef.current;
     if (slider) {
       slider.scrollBy({ left: 1000, top: 0, behavior: 'smooth' });
@@ -27,7 +26,7 @@ const ResponseCollector = () => {
       setActiveSlide((prev) => (prev <= 1 ? prev : prev - 1));
     }
   };
-  console.log(activeSlide);
+
   return (
     <main>
       <button onClick={prev} className="prev">
