@@ -4,12 +4,41 @@ main {
   overflow: hidden;
 }
 
-.home {
+.hero {
   height: 100vh;
   width: 100vw;
   background-color: #21D4FD;
-background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  background-image: url('assets/landing_bg.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
 
+.heroContent {
+  margin-left: 20%;
+  max-width: 700px;
+}
+
+.logo {
+  max-height: 140px;
+  filter: invert(100%);
+  margin-bottom: 24px;
+}
+
+.hey {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.subTitle {
+  margin-bottom: 12px;
 }
 
 .slider {
@@ -38,15 +67,45 @@ background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
   margin: 120px auto;
 }
 
+.label {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nameInput {
+  height: 48px;
+  min-width: 320px;
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  margin: 6px 0 12px 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.start {
+  height: 48px;
+  min-width: 180px;
+  border-radius: 8px;
+  display: inline-block;
+  background-color: #21D4FD;
+  background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);
+  margin-top: 32px;
+  text-align: center;
+  line-height: 48px;
+}
+
 .next, .prev {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
   opacity: 0.5;
+  background: #fff;
+  color: #000;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -78,5 +137,23 @@ background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 .link {
   display: block;
   font-size: 24px;
+}
+
+.radio {
+  height: 18px;
+  width: 18px;
+}
+
+.conclusion {
+  .emoji {
+    font-size: 150px;
+    line-height: 150px;
+    margin-bottom: 24px;
+    font-weight: bold;
+  }
+
+  .message {
+    font-weight: 300;
+  }
 }
 

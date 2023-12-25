@@ -3,6 +3,7 @@ import useResponses from '../../store/response';
 import { Response } from '../../types';
 import { interpolate } from '../../utils';
 import { MAX_WEIGHT, MIN_WEIGHT } from '../../data/questions';
+import { conclusions } from '../../data/conclusion';
 
 const calculateWeight = (responses: Response[]) => {
   return responses.reduce((total, response) => {
@@ -24,11 +25,19 @@ const Conclusion = () => {
     [1, 5],
   );
 
+  const conclusion = useMemo(() => {
+    return conclusions[Math.floor(interpolatedWeight)];
+  }, [interpolatedWeight]);
+
   return (
-    <div className="slide">
-      <h1>
-        Congratulations {totalWeight} {Math.floor(interpolatedWeight)}
-      </h1>
+    <div className="slide conclusion">
+      <div className="slideContent">
+        <div className="emoji">{conclusion.emoji}</div>
+        <h1
+          className="message"
+          dangerouslySetInnerHTML={{ __html: conclusion.message }}
+        />
+      </div>
     </div>
   );
 };

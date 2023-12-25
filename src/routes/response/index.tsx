@@ -51,6 +51,7 @@ const ResponseCollector = () => {
                     type="radio"
                     value={option.weight}
                     name={response.question.label}
+                    className="radio"
                   />
                   {option.label}
                 </label>
