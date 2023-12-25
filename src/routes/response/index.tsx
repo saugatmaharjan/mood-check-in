@@ -26,6 +26,7 @@ const ResponseCollector = () => {
       setActiveSlide((prev) => (prev <= 1 ? prev : prev - 1));
     }
   };
+  console.log(activeSlide);
 
   return (
     <main>
